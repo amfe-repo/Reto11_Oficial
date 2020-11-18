@@ -4,19 +4,19 @@ class MainClass
 {
   static int my_variable = 0; //Variable global
 
-
   public static void ProcTablaMultiplicar()
   {
     for (int i = 0; i <= 12; i++) 
     {
      Console.WriteLine("{0} x {1} = {2}", my_variable, i, (my_variable*i)); 
     }
+
+    Console.WriteLine("Presiona una tecla para continuar");
     Console.ReadKey();
   }
 
   public static void ProcMostrarEvaluacionPrimo()
   {
-    //double divisor = 0.0;
     // 2, 3, 5, 7, 11: primeros primos
     int divisor = 2;
     bool valprimo = false;
@@ -27,6 +27,7 @@ class MainClass
       {
         valprimo = false; //Redundancia
         break;
+
       }else{ 
         if(my_variable / divisor < divisor)
         {
@@ -35,52 +36,32 @@ class MainClass
         }
       }
        
-       if (divisor == 2)
-       {
-         divisor = divisor +1
-       }else{
-         divisor = divisor +2
-       }
+      if (divisor == 2)
+      {
+        divisor = divisor +1;
+      }else{
+        divisor = divisor +2;
+      }
       
     }
-
-    Console.WriteLine(my_variable + " es " + valprimo);
-
-    /*if (my_variable % 2 == 0)
+  
+    if (valprimo == true)
     {
-    
-    }else
-    {
-            
-      if(my_variable / 2 < 2)
-      {
-       valprimo = true;
-      }else{
-        if(my_variable / 3 < 3)
-        {
-        valprimo = true;
-        }else{
-          if(my_variable / 7 < 7){
-            valprimo = true;
-          }else{
-            if(my_variable / 11 < 11)
-          {
-            valprimo = true;
-          }
-        }
-          
-        }
-      }
- 
-    }*/
+      Console.WriteLine("El Numero es primo");
+    }else{
+      Console.WriteLine("El Numero no es primo");
+    }
+
+    Console.WriteLine("Presiona una tecla para continuar");
+    Console.ReadKey();
 
   }
 
-
+  //Console.Clear();
   public static void Main (string[] args)
   {
     int selector = 0; //Variable general
-    int loop = 0;
+    int loop = 0; //Control de bucle
 
     while(loop == 0)
     {
@@ -97,24 +78,27 @@ class MainClass
       switch(selector)
       {
       case 1:
+            Console.Clear();
             Console.WriteLine("Dame la variable: ");
             my_variable = int.Parse(Console.ReadLine());
             break;
       case 2:
+            Console.Clear();
             ProcTablaMultiplicar();
             break;
       case 3:
+            Console.Clear();
             ProcMostrarEvaluacionPrimo();
             break;
       case 4:
             loop = 1;
             Console.WriteLine("Has salido!!");
             break;
-
       default:
-            Console.WriteLine("su selecion es invalida");
-      break;
+            Console.WriteLine("Su selecion es invalida");
+            break;
       }
+      Console.Clear();
     }
   }
 }
