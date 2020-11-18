@@ -35,11 +35,16 @@ class MainClass
         }
       }
        
-       if (divisor == 2){
-         
+       if (divisor == 2)
+       {
+         divisor = divisor +1
+       }else{
+         divisor = divisor +2
        }
       
     }
+
+    Console.WriteLine(my_variable + " es " + valprimo);
 
     /*if (my_variable % 2 == 0)
     {
@@ -68,8 +73,6 @@ class MainClass
       }
  
     }*/
-
-    Console.WriteLine(my_variable + " es " + valprimo);
 
   }
 
